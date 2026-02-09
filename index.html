@@ -1,0 +1,402 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Boulder AI Research Lab</title>
+    <meta
+      name="description"
+      content="An AI research lab focused on computer vision, drug discovery, fraud detection, and large-scale opinion mining."
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --bg: #0b1020;
+        --card: #121935;
+        --accent: #4f8cff;
+        --accent-2: #22c55e;
+        --text: #e5e7eb;
+        --muted: #9ca3af;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        font-family:
+          "Inter",
+          system-ui,
+          -apple-system,
+          BlinkMacSystemFont,
+          sans-serif;
+        background: radial-gradient(circle at top, #111a3a 0%, var(--bg) 60%);
+        color: var(--text);
+        line-height: 1.6;
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      header {
+        padding: 1.5rem 5%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: sticky;
+        top: 0;
+        background: rgba(11, 16, 32, 0.8);
+        backdrop-filter: blur(10px);
+        z-index: 10;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+      }
+
+      .logo {
+        font-weight: 700;
+        font-size: 1.25rem;
+        letter-spacing: 0.5px;
+      }
+
+      nav a {
+        margin-left: 1.5rem;
+        color: var(--muted);
+        font-weight: 500;
+      }
+
+      nav a:hover {
+        color: var(--text);
+      }
+
+      .hero {
+        padding: 6rem 5% 5rem;
+        max-width: 1200px;
+        margin: 0 auto;
+        text-align: center;
+      }
+
+      .hero h1 {
+        font-size: clamp(2.5rem, 5vw, 3.5rem);
+        line-height: 1.15;
+        margin-bottom: 1rem;
+        background: linear-gradient(90deg, #fff, var(--accent));
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+
+      .hero p {
+        color: var(--muted);
+        max-width: 820px;
+        margin: 0 auto 2.5rem;
+        font-size: 1.05rem;
+      }
+
+      .cta {
+        display: inline-flex;
+        gap: 1rem;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      .btn {
+        padding: 0.8rem 1.4rem;
+        border-radius: 10px;
+        font-weight: 600;
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        background: linear-gradient(135deg, var(--accent), #7aa7ff);
+        color: #0b1020;
+      }
+
+      .btn.secondary {
+        background: transparent;
+        color: var(--text);
+      }
+
+      section {
+        padding: 4.5rem 5%;
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+
+      h2 {
+        font-size: 2rem;
+        margin-bottom: 1rem;
+        text-align: center;
+      }
+
+      .subtitle {
+        text-align: center;
+        color: var(--muted);
+        margin-bottom: 3rem;
+        max-width: 720px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+        gap: 1.5rem;
+      }
+
+      .card {
+        background: linear-gradient(
+          180deg,
+          rgba(255, 255, 255, 0.02),
+          rgba(255, 255, 255, 0)
+        );
+        border: 1px solid rgba(255, 255, 255, 0.06);
+        border-radius: 16px;
+        padding: 1.5rem;
+        transition:
+          transform 0.2s ease,
+          box-shadow 0.2s ease;
+      }
+
+      .card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+      }
+
+      .card h3 {
+        margin-top: 0;
+        margin-bottom: 0.5rem;
+        font-size: 1.15rem;
+      }
+
+      .card p {
+        margin: 0;
+        color: var(--muted);
+        font-size: 0.95rem;
+      }
+
+      .focus-list {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 1.5rem;
+      }
+
+      footer {
+        border-top: 1px solid rgba(255, 255, 255, 0.05);
+        padding: 2.5rem 5%;
+        text-align: center;
+        color: var(--muted);
+        font-size: 0.9rem;
+      }
+
+      .highlight {
+        color: var(--accent-2);
+        font-weight: 600;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="logo">Boulder AI Lab</div>
+      <nav>
+        <a href="#about">About</a>
+        <a href="#research">Research</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero">
+        <img
+          src="https://drive.google.com/file/d/1L5rUUSaLxhJS-nA7TV5zWXgwm5U_7qjL/view?usp=sharing"
+          alt="AI research hero"
+          style="width: 100%; border-radius: 16px; margin-bottom: 2rem"
+        />
+        <h1>Applied AI Research for Real‑World Impact</h1>
+        <p>
+          We are an independent AI research lab building advanced machine
+          learning systems across
+          <span class="highlight">computer vision</span>,
+          <span class="highlight">drug discovery</span>,
+          <span class="highlight">fraud detection</span>, and
+          <span class="highlight">large‑scale opinion mining</span>. Our work
+          transforms raw data into actionable intelligence.
+        </p>
+        <div class="cta">
+          <a class="btn" href="#research">Explore Our Work</a>
+          <a class="btn secondary" href="#contact">Collaborate With Us</a>
+        </div>
+      </section>
+
+      <section id="about">
+        <h2>About Us</h2>
+        <p class="subtitle">
+          Boulder AI Lab is focused on cutting‑edge applied research that
+          bridges academia and industry. We design scalable AI systems for
+          complex, data‑intensive problems.
+        </p>
+
+        <div class="grid">
+          <div class="card">
+            <h3>Research‑Driven</h3>
+            <p>
+              We prioritize experimental rigor, reproducibility, and measurable
+              performance gains.
+            </p>
+          </div>
+          <div class="card">
+            <h3>Production‑Ready</h3>
+            <p>
+              Our models are designed for deployment, scalability, and
+              real‑world reliability.
+            </p>
+          </div>
+          <div class="card">
+            <h3>Ethical AI</h3>
+            <p>
+              We integrate fairness, transparency, and privacy‑preserving
+              techniques into our pipelines.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section id="research">
+        <div
+          style="
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+            margin-bottom: 2.5rem;
+          "
+        >
+          <img
+            src="https://static.wixstatic.com/media/4c4fd6_411e6e8352c7427f9b835b279fd0271f~mv2.jpg/v1/fill/w_560,h_315,al_c,q_90,enc_avif,quality_auto/4c4fd6_411e6e8352c7427f9b835b279fd0271f~mv2.jpg"
+            style="width: 100%; border-radius: 16px"
+            alt="Computer vision"
+          />
+          <img
+            src="https://img.freepik.com/premium-photo/visual-representation-use-artificial-intelligence-machine-learning-drug-discovery_1314467-90463.jpg?w=740"
+            style="width: 100%; height: 80%; border-radius: 16px"
+            alt="Drug discovery lab"
+          />
+          <img
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTTvU_KUByS_e-4lr1q25pZgmg72MG0NeAOSg&s"
+            style="width: 100%; border-radius: 16px"
+            alt="Fraud detection"
+          />
+          <img
+            src="https://policyoptions.irpp.org/wp-content/uploads/2025/08/Wordpress-Big-data-social-media-and-political-fundraising-laws-have-transformed-election-campaigns.jpg"
+            style="width: 100%; border-radius: 16px"
+            alt="Opinion mining"
+          />
+        </div>
+        <h2>Research Focus</h2>
+        <p class="subtitle">
+          Our multidisciplinary research spans vision, language, graphs, and
+          large‑scale data mining.
+        </p>
+
+        <div class="focus-list">
+          <div class="card">
+            <h3>Computer Vision & Identity Systems</h3>
+            <p>
+              Face recognition, biometric verification, multi‑modal identity
+              detection, deepfake detection, and surveillance analytics using
+              state‑of‑the‑art CNNs and transformers.
+            </p>
+          </div>
+          <div class="card">
+            <h3>Machine Learning in Drug Discovery</h3>
+            <p>
+              Molecular property prediction, protein‑ligand binding estimation,
+              generative models for novel compound design, and bioinformatics
+              pipelines.
+            </p>
+          </div>
+          <div class="card">
+            <h3>Fraud Detection & Risk Intelligence</h3>
+            <p>
+              Anomaly detection, transaction graph mining, explainable fraud
+              scoring, and real‑time monitoring systems.
+            </p>
+          </div>
+          <div class="card">
+            <h3>Large‑Scale Opinion Mining</h3>
+            <p>
+              Social network data indexing, political inclination inference,
+              sentiment analysis, and multi‑modal opinion modeling using posts,
+              text, and images.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section id="projects">
+        <h2>Selected Projects</h2>
+        <p class="subtitle">
+          A snapshot of our ongoing applied research and development work.
+        </p>
+
+        <div class="grid">
+          <div class="card">
+            <h3>VisionID</h3>
+            <p>
+              Next‑generation identity detection platform using vision
+              transformers and biometric fusion.
+            </p>
+          </div>
+          <div class="card">
+            <h3>DrugGen</h3>
+            <p>
+              Deep generative pipelines for small‑molecule synthesis and drug
+              candidate ranking.
+            </p>
+          </div>
+          <div class="card">
+            <h3>FraudGraph</h3>
+            <p>
+              Graph‑based anomaly detection system for real‑time financial fraud
+              prevention.
+            </p>
+          </div>
+          <div class="card">
+            <h3>OpinionScope</h3>
+            <p>
+              Large‑scale political inclination and sentiment modeling using
+              social network data streams.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section id="contact">
+        <h2>Contact & Collaboration</h2>
+        <p class="subtitle">
+          Interested in research partnerships, consulting, or data‑driven
+          product development?
+        </p>
+
+        <div class="grid">
+          <div class="card">
+            <h3>Email</h3>
+            <p>contact@boulderlab.ai</p>
+          </div>
+          <div class="card">
+            <h3>GitHub</h3>
+            <p>github.com/bouldergroup</p>
+          </div>
+          <div class="card">
+            <h3>Location</h3>
+            <p>Accra, Ghana · Remote Global Collaboration</p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <p>© 2026 Boulder AI Research Lab. All rights reserved.</p>
+    </footer>
+  </body>
+</html>
